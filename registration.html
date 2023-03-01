@@ -1,0 +1,134 @@
+<html>
+    <head> 
+        <title> Registration Form </title> 
+    </head>
+    <style>
+        body{
+            background-color: skyblue;
+        }    
+        
+
+        h1{
+            text-align: center;
+            font-weight: bold;
+            color: black;
+        }
+
+        .container{
+            
+            padding: 15%;
+            background-color: white;
+            width: 50%;
+            height: 50%;
+        }
+
+        input[type=text], input[type=password] {
+            width: 50%;
+            padding: 15px;
+        }
+
+        label{
+            display: inline-block;
+            width: 250px;
+        }
+    </style>
+    <script>
+        function check()
+        {
+            if(document.getElementById("Name").value=="")
+            {
+                alert("enter a name")
+                return false;
+            }
+            else
+            {
+                true;
+            }
+            var email = document.getElementById("email")
+            var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9_\.\-])+\.)+([a-zA-Z0-9_\.\-]{2,4})+$/;
+            if(!filter.test(email.value))
+            {
+                alert("enter valid mail id!!");
+                return false;
+            }
+            else
+            {
+                true;
+            }
+            if((document.getElementById("psw").value=="") && (document.getElementById("psw-repeat").value==""))
+            {
+                alert("enter your password");
+                return false;
+            }
+            else
+            {
+                true;
+            }
+            if((document.getElementById("psw").value) != (document.getElementById("psw-repeat").value))
+            {
+                alert("your passwords do not match");
+                return false;
+            }
+            else
+            {
+                true;
+            }
+                
+          
+        }
+
+
+    </script>
+    <body>
+        
+        <center>
+        <form onsubmit= "return check()" action = "table.html" target = "_blank">
+            <div class="container">
+                <h1><center>Student Registration</center></h1>
+                &nbsp;
+                <label for = "Name"><b>Name</b></label>
+                <input type = "text" placeholder=" Enter Name" name="Name" id="Name" required>
+                <br>
+                <br>
+                
+                <label for ="Gender"><b>Gender</b></label>
+                <input type="radio" name="male">Male</input>
+                <input type="radio" name="female">female</input>
+                <br>
+                <br>
+                &nbsp;
+                <label for = "email"><b>Email</b></label>
+                <input type = "text" placeholder=" Enter Mail ID" name="email" id="email" required>
+                <br>
+                <br>
+                &nbsp;
+                <label for = "psw"><b>Password</b></label>
+                <input type = "password" placeholder=" Enter password" name="psw" id="psw" required>
+                <br>
+                <br>
+                &nbsp;
+                <label for = "psw-repeat"><b>Repeat Password</b></label>
+                <input type = "password" placeholder="Repeat password" name="psw-repeat" id="psw-repeat" required>
+                <br>
+                <br>
+                
+                <label for="course"><b>Course</b></label>
+                <select>
+                    <option value="Select" selected>Select</option>
+                    <option value="MCA">MCA</option>
+                    <option value="BCA">BCA</option>
+                    <option value="B-Tech">B-Tech</option>
+                    <option value="M-Tech">M-Tech</option>
+                </select>
+                <br>
+                <br>
+                &nbsp;
+                <button type="submit" value="Registration" ><b>Register</b></button>
+                <input type="reset">
+            
+            </div>
+        </center>
+        </form>
+    </body>
+    
+</html>
